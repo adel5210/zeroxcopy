@@ -1,9 +1,17 @@
 package com.adel;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
@@ -18,6 +26,7 @@ import java.util.concurrent.Executors;
 public class RunZC {
 
     public static void main(String[] args) {
+        clearTerminalScreen();
         System.out.println("--- ZeroCopy initialized ...");
         final long startTime = System.currentTimeMillis();
 
@@ -37,28 +46,66 @@ public class RunZC {
             System.out.println("usage: RunZC <source> <destination> \n");
             return;
         }
-        System.out.println("Handled thread: "+Thread.currentThread().getName());
+
+        System.out.println("Handled thread: " + Thread.currentThread());
         final String fromFile = args[0];
         final String toFile = args[1];
         try (final ZeroCopyChannel zcc = new ZeroCopyChannel(fromFile, toFile)) {
             System.out.println("--- ZeroCopy Success...");
-
-            //Generate checksum
-            byte[] data = Files.readAllBytes(Paths.get(fromFile));
-            byte[] hash = MessageDigest.getInstance("MD5").digest(data);
-            final String fromCheckSum = new BigInteger(1, hash).toString(16);
-
-            data = Files.readAllBytes(Paths.get(toFile));
-            hash = MessageDigest.getInstance("MD5").digest(data);
-            final String toCheckSum = new BigInteger(1, hash).toString(16);
-
-            System.out.println("fromFile: " + fromCheckSum);
-            System.out.println("toFile:   " + toCheckSum);
-            System.out.println(fromCheckSum.equals(toCheckSum) ? "File valid" : "File invalid");
+            validateChecksum(fromFile, toFile);
         } catch (Exception e) {
+            System.out.println("--- ZeroCopy Failed...");
             e.printStackTrace();
+        } finally {
+            System.out.println("--- ZeroCopy Completed");
         }
 
+    }
 
+    private static void validateChecksum(String fromFile, String toFile) throws ExecutionException, InterruptedException {
+        final CompletableFuture<String> processFromCS = CompletableFuture.supplyAsync(() -> checkSumOf(fromFile),
+                Executors.newVirtualThreadPerTaskExecutor());
+        final CompletableFuture<String> processToCS = CompletableFuture.supplyAsync(() -> checkSumOf(toFile),
+                Executors.newVirtualThreadPerTaskExecutor());
+
+        CompletableFuture.allOf(processFromCS, processToCS);
+
+        final String fromCS = processFromCS.get();
+        final String toCS = processToCS.get();
+
+        System.out.println("fromFile: " + fromCS);
+        System.out.println("toFile:   " + toCS);
+        System.out.println(fromCS.equals(toCS) ? "File valid" : "File invalid");
+    }
+
+    private static String checkSumOf(String filePath) {
+        String checkSum = "";
+        try (final SeekableByteChannel ch = Files.newByteChannel(Paths.get(filePath), StandardOpenOption.READ)) {
+
+            final List<byte[]> dataStream = new LinkedList<>();
+            final ByteBuffer bf = ByteBuffer.allocate(1000);
+            while (ch.read(bf) > 0) {
+                bf.flip();
+                dataStream.add(bf.array());
+                bf.clear();
+            }
+
+            final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            for (final byte[] byteArr : dataStream) {
+                byteArrayOutputStream.write(byteArr);
+            }
+
+            byte[] hash = MessageDigest.getInstance("MD5").digest(byteArrayOutputStream.toByteArray());
+            return new BigInteger(1, hash).toString(16);
+        } catch (IOException | NoSuchAlgorithmException e) {
+            System.out.println("Failed to validate checksum, cause: " + e.getMessage());
+        }
+        return checkSum;
+    }
+
+
+    private static void clearTerminalScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 }
