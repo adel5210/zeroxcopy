@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25c47d35-47b3-40c5-afc3-57313ccad473" name="Changes" comment="Virtual thread">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adel/RunZC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adel/RunZC.java" afterDir="false" />
-    </list>
+    <list default="true" id="25c47d35-47b3-40c5-afc3-57313ccad473" name="Changes" comment="Enhanced checksum validation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +78,7 @@
       <command value="mvn -Pnative -Dagent exec:exec@java-agent" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.mvn clean compile">
+  <component name="RunManager" selected="Maven.mvn -Pnative -Dagent package">
     <configuration name="mvn -Pnative -Dagent exec:exec@java-agent" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -298,14 +295,31 @@
       <option name="project" value="LOCAL" />
       <updated>1708346027587</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Enhanced checksum validation">
+      <option name="closed" value="true" />
+      <created>1708350874916</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708350874916</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Enhanced checksum validation">
+      <option name="closed" value="true" />
+      <created>1708351069262</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708351069262</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Minor fix compile" />
     <MESSAGE value="Virtual thread" />
-    <option name="LAST_COMMIT_MESSAGE" value="Virtual thread" />
+    <MESSAGE value="Enhanced checksum validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enhanced checksum validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
