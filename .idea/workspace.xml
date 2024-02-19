@@ -5,28 +5,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25c47d35-47b3-40c5-afc3-57313ccad473" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/adel/RunZC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adel/RunZC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/adel/ZeroCopyChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adel/ZeroCopyChannel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="2cZflXd0DSgra9RxPs0zXblJrwR" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.RunZC.executor": "Run",
+    "Maven.zeroxcopy [clean,compile,package].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "/home/adel/Desktop/zeroxcopy/src/main/java/com/adel/Main.java"
+    "onboarding.tips.debug.path": "/home/adel/Desktop/zeroxcopy/src/main/java/com/adel/Main.java",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean compile package" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="RunZC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.adel.RunZC" />
+      <module name="zeroxcopy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.adel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.RunZC" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -45,11 +87,14 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/adel/Main.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/adel/RunZC.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
