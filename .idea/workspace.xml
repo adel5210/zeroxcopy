@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25c47d35-47b3-40c5-afc3-57313ccad473" name="Changes" comment="Enhanced checksum validation" />
+    <list default="true" id="25c47d35-47b3-40c5-afc3-57313ccad473" name="Changes" comment="Enhanced checksum validation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,10 +39,10 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2cZflXd0DSgra9RxPs0zXblJrwR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -49,27 +51,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.RunZC.executor": "Run",
-    "Maven.mvn -Pnative -Dagent exec:exec@java-agent.executor": "Run",
-    "Maven.mvn -Pnative -Dagent package (1).executor": "Run",
-    "Maven.mvn -Pnative -Dagent package.executor": "Run",
-    "Maven.mvn clean compile.executor": "Run",
-    "Maven.zeroxcopy [-Pnative,-Dagent...].executor": "Run",
-    "Maven.zeroxcopy [clean,compile,package...].executor": "Run",
-    "Maven.zeroxcopy [clean,compile,package].executor": "Run",
-    "Maven.zeroxcopy [clean,package].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "/home/adel/Desktop/zeroxcopy/src/main/java/com/adel/Main.java",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.RunZC.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mvn -Pnative -Dagent exec:exec@java-agent.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mvn -Pnative -Dagent package (1).executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mvn -Pnative -Dagent package.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mvn clean compile.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.zeroxcopy [-Pnative,-Dagent...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.zeroxcopy [clean,compile,package...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.zeroxcopy [clean,compile,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.zeroxcopy [clean,package].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/adel/Desktop/zeroxcopy/src/main/java/com/adel/Main.java&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean compile package" />
@@ -78,7 +80,7 @@
       <command value="mvn -Pnative -Dagent exec:exec@java-agent" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.mvn clean compile">
+  <component name="RunManager" selected="Maven.mvn -Pnative -Dagent package">
     <configuration name="mvn -Pnative -Dagent exec:exec@java-agent" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -311,7 +313,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708351069262</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Enhanced checksum validation">
+      <option name="closed" value="true" />
+      <created>1708351496615</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708351496615</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Enhanced checksum validation">
+      <option name="closed" value="true" />
+      <created>1708351562891</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708351562891</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

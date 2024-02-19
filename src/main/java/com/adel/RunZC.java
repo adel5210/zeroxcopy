@@ -33,7 +33,11 @@ public class RunZC {
         try {
             final CompletableFuture<Void> runAsync = CompletableFuture.runAsync(() -> run(args),
                     Executors.newVirtualThreadPerTaskExecutor());
-            CompletableFuture.anyOf(runAsync);
+            try {
+                runAsync.get();
+            } catch (InterruptedException | ExecutionException e) {
+                System.out.println("Failed to process zerocopy, cause: "+e.getMessage());
+            }
         } finally {
             System.out.println("--- ZeroCopy process time(ms): " + (System.currentTimeMillis() - startTime));
         }
