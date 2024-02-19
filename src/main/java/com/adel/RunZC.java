@@ -4,6 +4,9 @@ import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
 
 /**
  * Compile JAR with
@@ -13,13 +16,28 @@ import java.security.MessageDigest;
  * mvn -Pnative -Dagent package
  */
 public class RunZC {
+
     public static void main(String[] args) {
         System.out.println("--- ZeroCopy initialized ...");
         final long startTime = System.currentTimeMillis();
+
+        try {
+            final CompletableFuture<Void> runAsync = CompletableFuture.runAsync(() -> run(args),
+                    Executors.newVirtualThreadPerTaskExecutor());
+            runAsync.get();
+        } catch (InterruptedException | ExecutionException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("--- ZeroCopy process time(ms): " + (System.currentTimeMillis() - startTime));
+        }
+    }
+
+    private static void run(String[] args) {
         if (args.length < 2) {
             System.out.println("usage: RunZC <source> <destination> \n");
             return;
         }
+        System.out.println("Handled thread: "+Thread.currentThread().getName());
         final String fromFile = args[0];
         final String toFile = args[1];
         try (final ZeroCopyChannel zcc = new ZeroCopyChannel(fromFile, toFile)) {
@@ -36,11 +54,11 @@ public class RunZC {
 
             System.out.println("fromFile: " + fromCheckSum);
             System.out.println("toFile:   " + toCheckSum);
-            System.out.println(fromCheckSum.equals(toCheckSum) ? "Valid" : "Invalid");
+            System.out.println(fromCheckSum.equals(toCheckSum) ? "File valid" : "File invalid");
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        System.out.println("--- ZeroCopy process time(ms): " + (System.currentTimeMillis() - startTime));
+
     }
 }
