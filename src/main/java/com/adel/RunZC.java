@@ -78,8 +78,7 @@ public class RunZC {
         System.out.println(fromCS.equals(toCS) ? "File valid" : "File invalid");
     }
 
-    private static String checkSumOf(String filePath) {
-        String checkSum = "";
+    private static String checkSumOf(final String filePath) {
         try (final SeekableByteChannel ch = Files.newByteChannel(Paths.get(filePath), StandardOpenOption.READ)) {
 
             final List<byte[]> dataStream = new LinkedList<>();
@@ -100,7 +99,7 @@ public class RunZC {
         } catch (IOException | NoSuchAlgorithmException e) {
             System.out.println("Failed to validate checksum, cause: " + e.getMessage());
         }
-        return checkSum;
+        return "";
     }
 
 
