@@ -8,6 +8,8 @@ import java.security.MessageDigest;
 /**
  * Compile JAR with
  * mvn clean compile package
+ * mvn -Pnative -Dagent exec:exec@java-agent
+ * mvn -Pnative -Dagent package
  */
 public class RunZC {
     public static void main(String[] args) {
