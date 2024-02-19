@@ -7,7 +7,8 @@ import java.security.MessageDigest;
 
 /**
  * Compile JAR with
- * mvn clean compile package
+ * mvn -Pnative clean compile package
+ * OR
  * mvn -Pnative -Dagent exec:exec@java-agent
  * mvn -Pnative -Dagent package
  */
