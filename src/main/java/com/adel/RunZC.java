@@ -70,8 +70,6 @@ public class RunZC {
         final CompletableFuture<String> processToCS = CompletableFuture.supplyAsync(() -> checkSumOf(toFile),
                 Executors.newVirtualThreadPerTaskExecutor());
 
-        CompletableFuture.allOf(processFromCS, processToCS);
-
         final String fromCS = processFromCS.get();
         final String toCS = processToCS.get();
 

@@ -80,7 +80,7 @@
       <command value="mvn -Pnative -Dagent exec:exec@java-agent" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.mvn -Pnative -Dagent package">
+  <component name="RunManager" selected="Maven.mvn -Pnative -Dagent exec:exec@java-agent">
     <configuration name="mvn -Pnative -Dagent exec:exec@java-agent" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
