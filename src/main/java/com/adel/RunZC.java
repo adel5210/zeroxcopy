@@ -1,7 +1,10 @@
 package com.adel;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.channels.SeekableByteChannel;
@@ -31,13 +34,7 @@ public class RunZC {
         final long startTime = System.currentTimeMillis();
 
         try {
-            final CompletableFuture<Void> runAsync = CompletableFuture.runAsync(() -> run(args),
-                    Executors.newVirtualThreadPerTaskExecutor());
-            try {
-                runAsync.get();
-            } catch (InterruptedException | ExecutionException e) {
-                System.out.println("Failed to process zerocopy, cause: "+e.getMessage());
-            }
+            run(args);
         } finally {
             System.out.println("--- ZeroCopy process time(ms): " + (System.currentTimeMillis() - startTime));
         }
@@ -79,24 +76,9 @@ public class RunZC {
     }
 
     private static String checkSumOf(final String filePath) {
-        try (final SeekableByteChannel ch = Files.newByteChannel(Paths.get(filePath), StandardOpenOption.READ)) {
-
-            final List<byte[]> dataStream = new LinkedList<>();
-            final ByteBuffer bf = ByteBuffer.allocate(1000);
-            while (ch.read(bf) > 0) {
-                bf.flip();
-                dataStream.add(bf.array());
-                bf.clear();
-            }
-
-            final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            for (final byte[] byteArr : dataStream) {
-                byteArrayOutputStream.write(byteArr);
-            }
-
-            byte[] hash = MessageDigest.getInstance("MD5").digest(byteArrayOutputStream.toByteArray());
-            return new BigInteger(1, hash).toString(16);
-        } catch (IOException | NoSuchAlgorithmException e) {
+        try(final InputStream is = Files.newInputStream(Paths.get(filePath))){
+            return DigestUtils.md5Hex(is);
+        } catch (IOException e) {
             System.out.println("Failed to validate checksum, cause: " + e.getMessage());
         }
         return "";
