@@ -62,8 +62,8 @@ public class RunZC {
         final String fromCS = processFromCS.get();
         final String toCS = processToCS.get();
 
-        System.out.println("fromFile: " + fromCS);
-        System.out.println("toFile:   " + toCS);
+        System.out.println("Source file: " + fromCS);
+        System.out.println("Dest. File:   " + toCS);
         System.out.println(fromCS.equals(toCS) ? "File valid" : "File invalid");
     }
 
