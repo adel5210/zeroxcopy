@@ -2,12 +2,9 @@ package com.adel;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
@@ -77,7 +74,6 @@ public class RunZC {
         }
         return "";
     }
-
 
     private static void clearTerminalScreen() {
         System.out.print("\033[H\033[2J");
