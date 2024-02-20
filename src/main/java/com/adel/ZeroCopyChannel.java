@@ -21,7 +21,7 @@ public class ZeroCopyChannel implements AutoCloseable {
                 try {
 
                     System.out.println("File transferred: " +
-                            ((source.size() / dest.size()) * 100) + "%");
+                            ((dest.size() / source.size()) * 100) + "%");
 
                     if (source.size() == dest.size()) break;
 
