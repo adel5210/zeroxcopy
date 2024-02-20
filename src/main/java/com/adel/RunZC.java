@@ -42,6 +42,7 @@ public class RunZC {
         final String toFile = args[1];
         try (final ZeroCopyChannel zcc = new ZeroCopyChannel(fromFile, toFile)) {
             System.out.println("--- ZeroCopy Success...");
+            zcc.close();
             validateChecksum(fromFile, toFile);
         } catch (Exception e) {
             System.out.println("--- ZeroCopy Failed...");
