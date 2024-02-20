@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25c47d35-47b3-40c5-afc3-57313ccad473" name="Changes" comment="Minor fixes">
+    <list default="true" id="25c47d35-47b3-40c5-afc3-57313ccad473" name="Changes" comment="File transfer display">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/adel/RunZC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adel/RunZC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/adel/ZeroCopyChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adel/ZeroCopyChannel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -392,7 +391,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708355420684</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="File transfer display">
+      <option name="closed" value="true" />
+      <created>1708398267110</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708398267111</updated>
+    </task>
+    <task id="LOCAL-00015" summary="File transfer display">
+      <option name="closed" value="true" />
+      <created>1708398407109</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1708398407109</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -401,7 +416,8 @@
     <MESSAGE value="Virtual thread" />
     <MESSAGE value="Enhanced checksum validation" />
     <MESSAGE value="Minor fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes" />
+    <MESSAGE value="File transfer display" />
+    <option name="LAST_COMMIT_MESSAGE" value="File transfer display" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
