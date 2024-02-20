@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="25c47d35-47b3-40c5-afc3-57313ccad473" name="Changes" comment="Minor fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/adel/RunZC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adel/RunZC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/adel/ZeroCopyChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/adel/ZeroCopyChannel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,28 +53,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.RunZC.executor": "Run",
-    "Maven.mvn -Pnative -Dagent exec:exec@java-agent.executor": "Run",
-    "Maven.mvn -Pnative -Dagent package (1).executor": "Run",
-    "Maven.mvn -Pnative -Dagent package.executor": "Run",
-    "Maven.mvn clean compile.executor": "Run",
-    "Maven.zeroxcopy [-Pnative,-Dagent...].executor": "Run",
-    "Maven.zeroxcopy [clean,compile,package...].executor": "Run",
-    "Maven.zeroxcopy [clean,compile,package].executor": "Run",
-    "Maven.zeroxcopy [clean,package].executor": "Run",
-    "Maven.zeroxcopy.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "/home/adel/Desktop/zeroxcopy/src/main/java/com/adel/Main.java",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.RunZC.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.RUN.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mvn -Pnative -Dagent exec:exec@java-agent.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mvn -Pnative -Dagent package (1).executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mvn -Pnative -Dagent package.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.mvn clean compile.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.zeroxcopy [-Pnative,-Dagent...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.zeroxcopy [clean,compile,package...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.zeroxcopy [clean,compile,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.zeroxcopy [clean,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.zeroxcopy.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/adel/Desktop/zeroxcopy/src/main/java/com/adel/Main.java&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean compile package" />
@@ -96,7 +97,7 @@
             </option>
             <option name="goals">
               <list>
-                <option value="--version" />
+                <option value="validate" />
               </list>
             </option>
             <option name="multimoduleDir" />
@@ -383,7 +384,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708352585737</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Minor fixes">
+      <option name="closed" value="true" />
+      <created>1708355420684</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708355420684</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -399,7 +408,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/adel/RunZC.java</url>
-          <line>27</line>
+          <line>21</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

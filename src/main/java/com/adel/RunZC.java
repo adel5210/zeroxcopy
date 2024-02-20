@@ -2,19 +2,13 @@ package com.adel;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-import java.io.ByteArrayOutputStream;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.math.BigInteger;
-import java.nio.ByteBuffer;
-import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
@@ -76,7 +70,7 @@ public class RunZC {
     }
 
     private static String checkSumOf(final String filePath) {
-        try(final InputStream is = Files.newInputStream(Paths.get(filePath))){
+        try (final InputStream is = Files.newInputStream(Paths.get(filePath))) {
             return DigestUtils.md5Hex(is);
         } catch (IOException e) {
             System.out.println("Failed to validate checksum, cause: " + e.getMessage());
