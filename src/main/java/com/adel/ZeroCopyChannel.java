@@ -17,8 +17,8 @@ public class ZeroCopyChannel implements AutoCloseable {
     public ZeroCopyChannel(final String fromFile, final String toFile) throws IOException {
         this.source = new FileInputStream(fromFile).getChannel();
         this.dest = new FileOutputStream(toFile).getChannel();
+        this.displayService = Executors.newVirtualThreadPerTaskExecutor();
 
-        displayService = Executors.newVirtualThreadPerTaskExecutor();
         CompletableFuture.runAsync(() -> {
             while (true) {
                 try {
